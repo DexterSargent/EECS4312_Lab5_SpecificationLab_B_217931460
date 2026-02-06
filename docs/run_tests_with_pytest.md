@@ -1,4 +1,4 @@
-# How to Run Test Cases 
+# How to Run Test Cases
 
 This document explains how to run the provided test cases for the `is_allocation_feasible` function using **pytest**.
 
@@ -30,8 +30,8 @@ Place your implementation and test files in the same directory:
     test_solution.py    # your test cases
 ```
 
-* `solution.py` contains the `is_allocation_feasible` function.
-* `test_solution.py` contains the test functions.
+- `solution.py` contains the `is_allocation_feasible` function.
+- `test_solution.py` contains the test functions.
 
 > **Note:** If your file names are different, adjust the instructions below accordingly.
 
@@ -45,6 +45,7 @@ In `test_solution.py`, import your implementation module. For example:
 import pytest
 from solution import is_allocation_feasible # replace "solution" with your implementation file name without .py
 ```
+
 ---
 
 ## 4. Run All Tests
@@ -75,13 +76,13 @@ pytest -v -k test_name
 
 ## 6. If Your File Names Are Different
 
-* **Test file**: If your test file doesn't match `test_*.py` or `*_test.py`, specify it explicitly:
+- **Test file**: If your test file doesn't match `test_*.py` or `*_test.py`, specify it explicitly:
 
 ```bash
 pytest mytests.py
 ```
 
-* Run a single test in a differently named file:
+- Run a single test in a differently named file:
 
 ```bash
 pytest -v mytests.py -k test_name
