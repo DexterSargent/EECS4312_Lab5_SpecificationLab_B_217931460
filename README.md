@@ -1,6 +1,6 @@
 ## TODO:
-## Student Name:
-## Student ID: 
+## Student Name: Dexter Sargent
+## Student ID: 217931460
 
 # Is Resource Allocation Feasible Lab Repository
 
