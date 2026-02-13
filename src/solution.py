@@ -24,10 +24,12 @@ def is_allocation_feasible(
 
     Rules:
     - If a request references a resource not in `resources`, its capacity is treated as 0
-      and a ValueError is raised.
+      and the allocation is infeasible.
     - Negative request amounts are not allowed.
     - Requests are indivisible.
     - Request order does not matter.
+    - At least one resource must remain partially unallocated after assignment.
+      If all resources are exactly consumed, the allocation is infeasible.
     """
 
     # Validate resource capacities
@@ -59,8 +61,16 @@ def is_allocation_feasible(
 
             total_demand[resource] += amount
 
-    for resource, demand in total_demand.items():
-        if demand > resources[resource]:
+    # Check feasibility and enforce leftover rule
+    any_leftover = False
+
+    for resource, capacity in resources.items():
+        demand = total_demand.get(resource, 0)
+
+        if demand > capacity:
             return False
 
-    return True
+        if demand < capacity:
+            any_leftover = True
+
+    return any_leftover

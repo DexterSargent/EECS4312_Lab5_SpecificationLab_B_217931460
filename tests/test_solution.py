@@ -1,5 +1,5 @@
-## Student Name:
-## Student ID: 
+## Student Name: Dexter Sargent
+## Student ID: 217931460
 
 """
 Public test suite for the meeting slot suggestion exercise.
